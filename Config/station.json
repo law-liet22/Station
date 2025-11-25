@@ -1,0 +1,7 @@
+{
+    "nom": "HARRINGTON Space Station",
+    "altitudeInitiale": 410.0, 
+    "carburantMax": 1000.0,
+    "energieMax": 500.0,
+    "consoParHeure": 0.02
+}
