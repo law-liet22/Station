@@ -1,8 +1,9 @@
 import json
-from Trucs_random.Config.logging import logging
+from Config.logging import logging
+from Config.filePath import jsonPath
 
 try:
-    f = open("Trucs_random/Config/station.json", "rt")
+    f = open(jsonPath, "rt")
     all = f.read()
     datas = json.loads(all)
     logging.info("Ouverture et lecture du fichier station.json.")
@@ -33,7 +34,7 @@ class Experiment:
         return self._energyRequired
 
     @energyRequired.setter
-    def energyRequired(self, value: float):
+    def energyRequired(self, value:float):
         self._energyRequired = value
 
     @property
@@ -84,3 +85,5 @@ class Experiment:
 
     def isCompleted():
         pass
+
+f.close()

@@ -1,8 +1,9 @@
 import json
 from Config.logging import logging
+from Config.filePath import jsonPath
 
 try:
-    f = open("Trucs_random/Config/station.json", "rt")
+    f = open(jsonPath, "rt")
     all = f.read()
     datas = json.loads(all)
     logging.info("Ouverture et lecture du fichier station.json.")
@@ -167,3 +168,5 @@ def setTemperature(temp: float):
 
 def setIntegrity(integrity:float):
     pass
+
+f.close()

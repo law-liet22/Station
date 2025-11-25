@@ -1,11 +1,11 @@
 import json
-from Trucs_random.Config.logging import logging
+from Config.logging import logging
 from Module import Module
 from Experiment import Experiment
-
+from Config.filePath import jsonPath
 
 try:
-    f = open("Trucs_random/Config/station.json", "rt")
+    f = open(jsonPath, "rt")
     all = f.read()
     datas = json.loads(all)
     logging.info("Ouverture et lecture du fichier station.json.")
@@ -89,3 +89,5 @@ class Crew:
 
     def performResearch(exp: Experiment):
         pass
+
+f.close()

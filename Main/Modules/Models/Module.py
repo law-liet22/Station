@@ -1,8 +1,9 @@
 import json
-from Trucs_random.Config.logging import logging
+from Config.logging import logging
+from Config.filePath import jsonPath
 
 try:
-    f = open("Trucs_random/Config/station.json", "rt")
+    f = open(jsonPath, "rt")
     all = f.read()
     datas = json.loads(all)
     logging.info("Ouverture et lecture du fichier station.json.")
@@ -91,3 +92,4 @@ class Module:
     def repair(repairPoint:float):
         pass
     
+f.close()
