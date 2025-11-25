@@ -1,5 +1,4 @@
 import json
-# Import du logging créé dans Config/logging.py
 from Config.logging import logging
 
 try:
@@ -9,7 +8,6 @@ try:
     logging.info("Ouverture et lecture du fichier station.json.")
 except FileNotFoundError as fnfe:
     logging.exception(f"Erreur lors de l'ouverture du fichier station.json : le fichier n'a pas été trouvé.")
-    print("non")
 
 class Event:
     def __init__(self, name:str, type:str, probability:float, targerModule:str, impactMagnitude:float):

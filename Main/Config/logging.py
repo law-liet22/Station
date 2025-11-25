@@ -1,16 +1,15 @@
-import logging as _logging
-
+import logging 
 # configure the standard logging module
-_logging.basicConfig(
+logging.basicConfig(
     format="\n%(levelname)s — %(asctime)s — %(name)s — %(message)s\n",
-    filename="Trucs_random/Logs/app.log",
+    filename="Main/Logs/app.log",
 )
 
 # create the application logger
-logger = _logging.getLogger("App")
+logger = logging.getLogger("App")
 
 # expose the logger object under the name `logging` so importing
 # `from Config.logging import logging` returns a usable logger instance
-logging = logger
+_logging = logger
 
 __all__ = ["logging", "logger"]

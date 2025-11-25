@@ -1,4 +1,5 @@
 import json, logging
+from Modules.Models.Event import Event
 
 logger = logging.basicConfig(format="\n%(levelname)s — %(asctime)s — %(name)s — %(message)s\n", 
                              filename="Trucs_random/Logs/app.log")
