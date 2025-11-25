@@ -7,6 +7,7 @@ logging.basicConfig(
 
 # create the application logger
 logger = logging.getLogger("App")
+logger.setLevel(logging.DEBUG)
 
 # expose the logger object under the name `logging` so importing
 # `from Config.logging import logging` returns a usable logger instance

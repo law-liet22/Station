@@ -1,27 +1,28 @@
 import json
-from Modules.Models.Event import *
-from Modules.Models.Crew import *
-from Modules.Models.Module import *
-from Modules.Models.Experiment import *
-from Modules.Models.Station import *
-from Config.logging import logging
+from Modules import *
+from Config.logging import _logging
+from Modules.Utils.effacerTerminal import effacerTerminal
 
-def operationFoireuse(valeur):
-    if valeur < 0:
-        raise ValueError("Valeur incorrecte : le nombre ne peut être négatif.")
+s1 = Station(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, [], [])
+print(s1)
+
+play = True
+
+while play:
+    try:
+        print(
+"""----------------------------
+        Menu Principal
+1. Démarrer la simulation
+2. Charger une partie
+3. Options
+4. Quitter
+----------------------------""")
     
-    else:
-        logging.debug("Opération réussie")
+        choice = input("Choisissez une option (1-4) : ")
+        effacerTerminal()
 
-try:
-    val = input("Entrez une valeur : ")
 
-    if val.isdigit() == False:
-        raise ValueError(f"Valeur incorrecte : seuls les chiffres sont acceptés. Valeur entrée : '{val}'")
-    
-    else:    
-        valeur = int(val)
-        operationFoireuse(valeur)
-
-except ValueError as ve:
-    logging.exception(f"Exception : {str(ve)}")
+    except KeyboardInterrupt as ki:
+        _logging.info("Arrêt du programme par l'utilisateur.")
+        play = False
