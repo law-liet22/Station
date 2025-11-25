@@ -11,16 +11,17 @@ def operationFoireuse(valeur):
         raise ValueError("Valeur incorrecte : le nombre ne peut être négatif.")
     
     else:
-        logging.info("Opération réussie")
+        logging.debug("Opération réussie")
 
 try:
     val = input("Entrez une valeur : ")
 
     if val.isdigit() == False:
-        raise ValueError("Valeur incorrecte : seuls les chiffres sont acceptés.")
+        raise ValueError(f"Valeur incorrecte : seuls les chiffres sont acceptés. Valeur entrée : '{val}'")
     
-    valeur = int(val)
-    operationFoireuse(val)
+    else:    
+        valeur = int(val)
+        operationFoireuse(valeur)
 
 except ValueError as ve:
     logging.exception(f"Exception : {str(ve)}")

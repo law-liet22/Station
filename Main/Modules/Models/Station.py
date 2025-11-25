@@ -1,6 +1,8 @@
 import json
 from Config.logging import logging
 from Config.filePath import jsonPath
+from Modules.Models.Crew import *
+from Modules.Models.Module import *
 
 try:
     f = open(jsonPath, "rt")
@@ -10,24 +12,27 @@ try:
 
     class Station:
         def __init__(self, velocity:float, fuel:float,energy:float, maxEnergy:float, oxygen:float, maxOxygen:float,
-                    water:float, maxWater:float, temperature:float, modules:list, crew:list, alertLevel:int=0, integrity:float=1.0, 
+                    water:float, maxWater:float, temperature:float, modules:list[Module], crew:list[Crew], alertLevel:int=0, integrity:float=1.0, 
                     maxFuel:float=datas["carburantMax"], name:str=datas["nom"], altitude:float=datas["altitudeInitiale"]):
-            self._velocity = velocity
-            self._fuel = fuel
-            self._energy = energy
-            self._maxEnergy = maxEnergy
-            self._oxygen = oxygen
-            self._maxOxygen = maxOxygen
-            self._water = water
-            self._maxWater = maxWater
-            self._temperature = temperature
-            self._alertLevel = alertLevel
-            self._integrity = integrity
-            self._maxFuel = maxFuel
-            self._name = name
-            self._altitude = altitude
-            self._modules = modules
-            self._crew = crew
+            try:
+                self._velocity = velocity
+                self._fuel = fuel
+                self._energy = energy
+                self._maxEnergy = maxEnergy
+                self._oxygen = oxygen
+                self._maxOxygen = maxOxygen
+                self._water = water
+                self._maxWater = maxWater
+                self._temperature = temperature
+                self._alertLevel = alertLevel
+                self._integrity = integrity
+                self._maxFuel = maxFuel
+                self._name = name
+                self._altitude = altitude
+                self._modules = modules
+                self._crew = crew
+            except Exception as e:
+                logging.error(f"Erreur lors de l'initialisation de la station : {str(e)}")
 
         @property
         def velocity(self) -> float:
