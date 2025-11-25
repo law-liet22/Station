@@ -1,6 +1,6 @@
 import os
 
-def effacerTerminal():
+def clearTerminal():
     """Efface le terminal en fonction du système d'exploitation."""
     if os.name == 'nt':  # Pour Windows
         os.system('cls')

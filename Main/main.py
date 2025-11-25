@@ -1,15 +1,15 @@
 import json
 from Modules import *
 from Config.logging import _logging
-from Modules.Utils.effacerTerminal import effacerTerminal
-
-s1 = Station(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, [], [])
-print(s1)
+# from Modules.Utils.clearTerminal import clearTerminal
 
 play = True
 
+o1 = RessourcesService()
+
 while play:
     try:
+        _logging.info("Programme lancé.")
         print(
 """----------------------------
         Menu Principal
@@ -20,9 +20,9 @@ while play:
 ----------------------------""")
     
         choice = input("Choisissez une option (1-4) : ")
-        effacerTerminal()
+        clearTerminal()
 
 
     except KeyboardInterrupt as ki:
-        _logging.info("Arrêt du programme par l'utilisateur.")
+        _logging.info("Arrêt forcé du programme par l'utilisateur.")
         play = False
