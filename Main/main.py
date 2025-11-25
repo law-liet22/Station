@@ -1,28 +1,56 @@
-import json
+import json, time
 from Modules import *
 from Config.logging import _logging
 # from Modules.Utils.clearTerminal import clearTerminal
 
-play = True
+def __main__():
+    play = True
 
-o1 = RessourcesService()
+    while play:
+        try:
+            _logging.info("Programme lancé.")
+            print(
+    """----------------------------
+            Menu Principal
+    1. Démarrer la simulation
+    2. Charger une partie
+    3. Options
+    4. Quitter
+    ----------------------------""")
 
-while play:
-    try:
-        _logging.info("Programme lancé.")
-        print(
-"""----------------------------
-        Menu Principal
-1. Démarrer la simulation
-2. Charger une partie
-3. Options
-4. Quitter
-----------------------------""")
-    
-        choice = input("Choisissez une option (1-4) : ")
-        clearTerminal()
+            choice = input("Choisissez une option (1-4) : ")
+            clearTerminal()
 
+            if choice == '1':
+                clearTerminal()
+                print("Démarrage de la simulation", end="")
+                for i in range(3):
+                    print(".", end="", flush=True)
+                    time.sleep(1)
+                clearTerminal()
+                return
 
-    except KeyboardInterrupt as ki:
-        _logging.info("Arrêt forcé du programme par l'utilisateur.")
-        play = False
+            elif choice == '2':
+                clearTerminal()
+                pass
+
+            elif choice == '3':
+                clearTerminal()
+                pass
+
+            elif choice == '4':
+                print("Fermeture du programme", end="")
+                for i in range(3):
+                    print(".", end="", flush=True)
+                    time.sleep(1)
+                clearTerminal()
+                play = False
+                _logging.info("Programme arrêté par l'utilisateur.")
+                return
+        except KeyboardInterrupt as ki:
+            _logging.info("Arrêt forcé du programme par l'utilisateur.")
+            play = False
+            return
+
+if __name__ == "__main__":
+    __main__()

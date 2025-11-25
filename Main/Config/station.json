@@ -1,7 +1,18 @@
 {
-    "nom": "HARRINGTON Space Station",
-    "altitudeInitiale": 410.0, 
-    "carburantMax": 1000.0,
-    "energieMax": 500.0,
-    "consoParHeure": 0.02
+    "name": "HARRINGTON Space Station",
+    "initialAltitude": 410.0,
+    "initialVelocity": 7.0,
+    "initialFuel": 250.0,
+    "maxFuel": 1000.0,
+    "initialEnergy": 150.0,
+    "maxEnergy": 500.0,
+    "initialOxygen": 500.0,
+    "maxOxygen": 1000.0,
+    "initialWater": 300.0,
+    "maxWater": 1000.0,
+    "initialTemperature": 24.3,
+    "initialIntegrity": 1.0,
+    "initialAlertLevel": 0,
+    "initialCrewCount": 10,
+    "hourComsuption": 0.05
 }

@@ -11,10 +11,32 @@ try:
     logging.info("Ouverture et lecture du fichier station.json.")
 
     class Station:
-        def __init__(self, velocity:float, fuel:float,energy:float, maxEnergy:float, oxygen:float, maxOxygen:float,
-                    water:float, maxWater:float, temperature:float, modules:list[Module], crew:list[Crew], alertLevel:int=0, integrity:float=1.0, 
-                    maxFuel:float=datas["carburantMax"], name:str=datas["nom"], altitude:float=datas["altitudeInitiale"]):
+        def __init__(self, velocity:float=datas["initialVelocity"], 
+                     fuel:float=        datas["initialFuel"],
+                     energy:float=      datas["initialEnergy"], 
+                     maxEnergy:float=   datas["maxEnergy"], 
+                     oxygen:float=      datas["initialOxygen"], 
+                     maxOxygen:float=   datas["maxOxygen"],
+                     water:float=       datas["initialWater"], 
+                     maxWater:float=    datas["maxWater"], 
+                     temperature:float= datas["initialTemperature"], 
+                     modules:list[Module]=[], crew:list[Crew]=[], 
+                     alertLevel:int=    datas["initialAlertLevel"], 
+                     integrity:float=   datas["initialIntegrity"], 
+                     maxFuel:float=     datas["maxFuel"], 
+                     name:str=          datas["name"], 
+                     altitude:float=    datas["initialAltitude"]):
+
             try:
+                if velocity<0 or velocity<6.8 or velocity>8.2:
+                    raise ValueError(f"La vélocité ne peut pas être négative, inférieure à 6.8km/s ou supérieure à 8.2km/s. Valeur entrée : '{velocity}'")
+                
+                elif altitude<300 or altitude>900:
+                    raise ValueError(f"L'altitude doit être comprise entre 300 et 900km.")
+                
+                elif maxFuel<fuel:
+                    raise ValueError(f"Il ne peut pas y avoir plus de carburant que la capacité maximale.")
+                
                 self._velocity = velocity
                 self._fuel = fuel
                 self._energy = energy
@@ -31,6 +53,10 @@ try:
                 self._altitude = altitude
                 self._modules = modules
                 self._crew = crew
+
+            except ValueError as ve:
+                logging.error(f"Valeur incorrecte lors de l'initialisation de la station : {str(ve)}")
+
             except Exception as e:
                 logging.error(f"Erreur lors de l'initialisation de la station : {str(e)}")
 
