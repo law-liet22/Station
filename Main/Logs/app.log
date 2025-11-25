@@ -1,20 +1,6 @@
 
-ERROR — 2025-11-25 11:50:39,931 — root — Erreur lors de l'ouverture du fichier station.json : le fichier n'a pas été trouvé.
+ERROR — 2025-11-25 12:15:21,592 — root — Exception : Valeur incorrecte : seuls les chiffres sont acceptés.
 Traceback (most recent call last):
-  File "/home/malienar/Bureau/L3/python/Station/Main/Modules/Models/Event.py", line 5, in <module>
-    f = open("Trucs_random/Config/station.json", "rt")
-FileNotFoundError: [Errno 2] No such file or directory: 'Trucs_random/Config/station.json'
-
-ERROR — 2025-11-25 11:50:50,545 — root — Erreur lors de l'ouverture du fichier station.json : le fichier n'a pas été trouvé.
-Traceback (most recent call last):
-  File "/home/malienar/Bureau/L3/python/Station/Main/Modules/Models/Event.py", line 5, in <module>
-    f = open("Trucs_random/Config/station.json", "rt")
-FileNotFoundError: [Errno 2] No such file or directory: 'Trucs_random/Config/station.json'
-
-ERROR — 2025-11-25 11:50:52,250 — root — Exception : Valeur incorrecte : la valeur ne peut être négatif.
-Traceback (most recent call last):
-  File "/home/malienar/Bureau/L3/python/Station/Main/main.py", line 16, in <module>
-    operationFoireuse(val)
-  File "/home/malienar/Bureau/L3/python/Station/Main/main.py", line 10, in operationFoireuse
-    raise ValueError("Valeur incorrecte : la valeur ne peut être négatif.")
-ValueError: Valeur incorrecte : la valeur ne peut être négatif.
+  File "/home/malienar/Bureau/L3/python/Station/Main/main.py", line 19, in <module>
+    raise ValueError("Valeur incorrecte : seuls les chiffres sont acceptés.")
+ValueError: Valeur incorrecte : seuls les chiffres sont acceptés.

@@ -1,1 +1,1 @@
-jsonPath = "Logs/station.log"
+jsonPath = "Main/Config/station.json"
