@@ -3,19 +3,22 @@ from Modules import *
 from Config.logging import _logging
 # from Modules.Utils.clearTerminal import clearTerminal
 
+exitKey = '0'
+paramsKey = '3'
+
 def __main__():
     play = True
 
     while play:
         try:
             _logging.info("Programme lancé.")
-            print(
-    """----------------------------
+            print(f"""
+    ----------------------------
             Menu Principal
     1. Démarrer la simulation
     2. Charger une partie
-    3. Options
-    4. Quitter
+    {paramsKey}. Options
+    {exitKey}. Quitter
     ----------------------------""")
 
             choice = input("Choisissez une option (1-4) : ")
@@ -34,11 +37,11 @@ def __main__():
                 clearTerminal()
                 pass
 
-            elif choice == '3':
+            elif choice == paramsKey:
                 clearTerminal()
                 pass
 
-            elif choice == '4':
+            elif choice == exitKey:
                 print("Fermeture du programme", end="")
                 for i in range(3):
                     print(".", end="", flush=True)
