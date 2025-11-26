@@ -21,11 +21,16 @@ def __main__():
     {exitKey}. Quitter
     ----------------------------""")
 
-            choice = input("Choisissez une option (0-4) : ")
             clearTerminal()
+            choice = input("Choisissez une option (0-4) : ")
 
             if choice == '1':
                 clearTerminal()
+                saves = verifyFileAndCreateIfNotFound("Main/Data/gameSaves.csv")
+                print(saves)
+
+
+
                 print("Démarrage de la simulation", end="")
                 for i in range(3):
                     print(".", end="", flush=True)
