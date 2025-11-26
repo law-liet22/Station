@@ -1,5 +1,5 @@
 import json
-from Config.logging import logging
+from Config.Logging import logging
 from Config.filePath import jsonPath
 
 try:

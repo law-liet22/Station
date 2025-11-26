@@ -1,4 +1,4 @@
-from Config.logging import _logging
+from Config.Logging import _logging
 from Modules.Models.Crew import *
 from Modules.Models.Module import *
 from Modules.Models.Station import Station

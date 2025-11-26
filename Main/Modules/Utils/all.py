@@ -1,4 +1,5 @@
 import os
+import importlib.util
 
 def clearTerminal():
     """Efface le terminal en fonction du système d'exploitation."""

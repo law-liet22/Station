@@ -1,6 +1,6 @@
 import json
 
-from Config.logging import logging
+from Config.Logging import logging
 from Modules.Models.Module import *
 from Modules.Models.Experiment import *
 from Config.filePath import jsonPath

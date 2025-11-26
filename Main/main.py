@@ -1,6 +1,6 @@
 import json, time, random
 from Modules import *
-from Config.logging import _logging
+from Config.Logging import _logging
 # from Modules.Utils.clearTerminal import clearTerminal
 
 exitKey = '0'

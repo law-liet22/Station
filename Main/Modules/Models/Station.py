@@ -1,5 +1,5 @@
 import json
-from Config.logging import logging
+from Config.Logging import logging
 from Config.filePath import jsonPath
 from Modules.Models.Crew import *
 from Modules.Models.Module import *

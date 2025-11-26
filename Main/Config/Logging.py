@@ -2,7 +2,7 @@ import logging
 # configure the standard logging module
 logging.basicConfig(
     format="\n%(levelname)s — %(asctime)s — %(name)s — %(message)s\n",
-    filename="Main/Logs/app.log",
+    filename="Main/Logs/app.log"
 )
 
 # create the application logger

@@ -1,4 +1,4 @@
-from Config.logging import _logging
+from Config.Logging import _logging
 from Modules.Models.Station import *
 
 class ModuleService:
