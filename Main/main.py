@@ -1,4 +1,4 @@
-import json, time
+import json, time, random
 from Modules import *
 from Config.logging import _logging
 # from Modules.Utils.clearTerminal import clearTerminal
@@ -21,7 +21,7 @@ def __main__():
     {exitKey}. Quitter
     ----------------------------""")
 
-            choice = input("Choisissez une option (1-4) : ")
+            choice = input("Choisissez une option (0-4) : ")
             clearTerminal()
 
             if choice == '1':
@@ -50,7 +50,7 @@ def __main__():
                 play = False
                 _logging.info("Programme arrêté par l'utilisateur.")
                 return
-        except KeyboardInterrupt as ki:
+        except KeyboardInterrupt:
             _logging.info("Arrêt forcé du programme par l'utilisateur.")
             play = False
             return
