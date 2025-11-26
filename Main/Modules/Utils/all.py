@@ -1,5 +1,13 @@
 import os
-import importlib.util
+from pathlib import Path
+
+def verifyFileAndCreateIfNotFound(path: str) -> str:
+    p = Path(path)
+    if p.exists():
+        return path
+    else:
+        p = Path.touch(path)
+        return p
 
 def clearTerminal():
     """Efface le terminal en fonction du système d'exploitation."""
